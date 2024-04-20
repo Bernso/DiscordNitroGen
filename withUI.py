@@ -21,18 +21,18 @@ def startCode():
     startButton.destroy()
     main()
 
-def open_nitro(code):
-    if statusLabel.cget('text') == f'Code found!\nhttps://discord.gift/{code}':
-        webbrowser.open_new(f"https://discord.gift/{code}")
-    else:
-        print("No current code found, please wait and try again...")
+def open_nitro(event):
+    for i in range(1, 11):
+        webbrowser.open_new(f"https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+
 
 root = tk.Tk()
-root.geometry("300x300")
+root.geometry("300x150")
 root.title("Nitro Gen by Bernso")
 
 statusLabel = tk.Label(root, text="Code has not been found yet.")
-statusLabel.bind("<Button-1>", lambda:open_nitro(code=main()))
+statusLabel.bind("<Button-1>", open_nitro)
 statusLabel.pack(padx = 20, pady = 20)
 
 startButton = tk.Button(root, text="Start", command=startCode)
