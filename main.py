@@ -11,8 +11,8 @@ def main():
         code += random.choice(allChars)
     # 18 charcters
     url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
-    requests.get(url)
-    if requests.status_codes == 200:
+    decider = requests.get(url)
+    if decider.status_code == 200:
         print(f'Code {code} is valid!')
         print(f'https://discord.gift/{code}')
         input()
