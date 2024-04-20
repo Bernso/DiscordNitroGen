@@ -13,6 +13,7 @@ def main():
             print(f'Code {code} is valid!')
             print(f'https://discord.gift/{code}')
             statusLabel.configure(text=f"Code found!\nhttps://discord.gift/{code}", font=('helvetica', 14, 'bold'))
+            webbrowser.open_new(f"https://discord.gift/{code}")
             return code
         else:
             print(f'Code {code} is not valid!')
