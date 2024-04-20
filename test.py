@@ -14,8 +14,8 @@ app.title("Nitro Gen by Bernso")
 
 def open_nitro(num1):
     if statusLabel.cget('text') == f"BEANS {num1}": # USING THIS METHOD DOES NOT WORK
-        for i in range(1, 100):
-            webbrowser.open_new_tab(f"https://discord.gift/{num1}") # USING THIS METHOD DOES NOT WORK
+        for i in range(1, 2):
+            webbrowser.open_new(f"https://discord.gift/{num1}") # USING THIS METHOD DOES NOT WORK
     else:
         print("No current code found, please wait and try again...")
 
