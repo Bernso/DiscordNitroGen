@@ -19,7 +19,7 @@ def startCode():
     main()
 
 def open_nitro(code):
-    if statusLabel('text') == f'Code found!\nhttps://discord.gift/{code}':
+    if statusLabel.cget('text') == f'Code found!\nhttps://discord.gift/{code}':
         webbrowser.open_new(f"https://discord.gift/{code}")
     else:
         print("No current code found, please wait and try again...")
