@@ -1,4 +1,4 @@
-import tkinter as tk, requests, random
+import tkinter as tk, requests, random, webbrowser
 
 def main():
     allChars = f'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'
@@ -11,19 +11,26 @@ def main():
     if decider.status_code == 200:
         print(f'Code {code} is valid!')
         print(f'https://discord.gift/{code}')
-        input()
+        statusLabel.configure(text=f"Code found!\nhttps://discord.gift/{code}", font=('helvetica', 14, 'bold'))
     else:
         print(f'Code {code} is not valid!')
+def startCode():
+    startButton.destroy()
+    main()
 
-
+def open_nitro():
+    
 
 root = tk.Tk()
 root.geometry("300x300")
 root.title("Nitro Gen by Bernso")
 
 statusLabel = tk.Label(root, text="Code has not been found yet.")
+statusLabel.bind("<Button-1>", open_nitro)
 statusLabel.pack(padx = 20, pady = 20)
 
+startButton = tk.Button(root, text="Start", command=startCode)
+startButton.pack(padx = 20)
 
 
 
