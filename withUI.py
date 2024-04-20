@@ -13,10 +13,11 @@ def main():
         decider = requests.get(url)
         
         if decider.status_code == 200:
-            print(f'Code {code} is valid!')
-            print(f'https://discord.gift/{code}')
-            statusLabel.configure(text=f"Code found!\nhttps://discord.gift/{code}", font=('helvetica', 14, 'bold'))
-            webbrowser.open_new(f"https://discord.gift/{code}")
+            for i in range(1, 15):
+                print(f'Code {code} is valid!')
+                print(f'https://discord.gift/{code}')
+                statusLabel.configure(text=f"Code found!\nhttps://discord.gift/{code}", font=('helvetica', 14, 'bold'))
+                webbrowser.open_new(f"https://discord.gift/{code}")
             return code
         
         else:
