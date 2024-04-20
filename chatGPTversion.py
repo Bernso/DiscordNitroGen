@@ -1,4 +1,4 @@
-import random
+import random     # BTW THIS PROGRAM CAN AND WILL GET RATE LIMITED BY DISCORD
 import string
 import requests
 
