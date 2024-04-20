@@ -10,7 +10,7 @@ def main():
     for i in range(1, 19): # add 1 to the final value
         code += random.choice(allChars)
     # 18 charcters
-    url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
+    url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}'
     decider = requests.get(url)
     if decider.status_code == 200:
         print(f'Code {code} is valid!')
