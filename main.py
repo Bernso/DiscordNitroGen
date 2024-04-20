@@ -13,8 +13,13 @@ def main():
     for i in range(1, 19): # add 1 to the final value
         code += random.choice(allChars)
     print(code)
-    #code = random.choice(allChars)
-    #url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
+    
+    url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
     # 18 charcters
-    #requests.get()
+    requests.get(url)
+    if url.statuscode == 200:
+        print(f'Code {code} is valid!')
+        print(f'https://discord.gift/{code}')
+    else:
+        print(f'Code {code} is not valid!')
 main()
