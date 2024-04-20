@@ -17,7 +17,7 @@ def main():
     url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
     # 18 charcters
     requests.get(url)
-    if url.statuscode == 200:
+    if requests.status_codes == 200:
         print(f'Code {code} is valid!')
         print(f'https://discord.gift/{code}')
     else:
