@@ -11,7 +11,7 @@ def main():
     allChars = f'{nums}{chars}'
     code = ''
     for i in range(1, 19): # add 1 to the final value
-        code.join(random.choice(allChars))
+        code += random.choice(allChars)
     print(code)
     #code = random.choice(allChars)
     #url = f'https://www.discordapp.com/api/v9/entitlements/gift-codes/{code}?with_application'
