@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as tk, requests, random
 
 def main():
     allChars = f'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'
