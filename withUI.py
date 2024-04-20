@@ -4,6 +4,8 @@ root = tk.Tk()
 root.geometry("300x300")
 root.title("Nitro Gen by Bernso")
 
+statusLabel = tk.Label(root, text="Code has not been found yet.")
+statusLabel.pack(padx = 20, pady = 20)
 
 
 
