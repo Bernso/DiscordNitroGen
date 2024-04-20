@@ -18,8 +18,11 @@ def startCode():
     startButton.destroy()
     main()
 
-def open_nitro():
-    
+def open_nitro(code):
+    if statusLabel('text') == f'Code found!\nhttps://discord.gift/{code}':
+        webbrowser.open_new(f"https://discord.gift/{code}")
+    else:
+        print("No current code found, please wait and try again...")
 
 root = tk.Tk()
 root.geometry("300x300")
