@@ -70,7 +70,7 @@ def quitv2():
     quit()
 
 root = tk.CTk()
-root.geometry("300x150")
+root.geometry("300x180")
 root.title("Nitro Gen by Bernso")
 root.iconbitmap("Icon/Arhururan.ico")
 
@@ -78,10 +78,10 @@ statusLabel = tk.CTkLabel(root, text="Code has not been found yet.")
 statusLabel.bind("<Button-1>", open_nitro)
 statusLabel.pack(padx = 20, pady = 20)
 
-startButton = tk.CTkButton(root, text="Start", command=startCode)
-startButton.pack(padx = 20)
+startButton = tk.CTkButton(root, text="Start", command=startCode, width=100, height=40)
+startButton.pack(padx = 20, pady = 10)
 
-exitButton = tk.CTkButton(root, text="Exit App", command=quitv2)
+exitButton = tk.CTkButton(root, text="Exit App", command=quitv2, width=20)
 exitButton.pack(padx = 10, pady = 10)
 
 
