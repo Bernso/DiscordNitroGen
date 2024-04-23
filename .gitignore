@@ -1,3 +1,5 @@
 /.venv
 Icon/
 BeansFolders/
+withUI.spec
+build
