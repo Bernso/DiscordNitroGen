@@ -62,7 +62,7 @@ def startCode():
 
 
 def open_nitro(event):
-    for i in range(1, 11):
+    for i in range(1, 6):
         webbrowser.open_new(f"https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 def quitv2():
@@ -73,6 +73,12 @@ root = tk.CTk()
 root.geometry("300x180")
 root.title("Nitro Gen by Bernso")
 root.iconbitmap("Icon/Arhururan.ico")
+root.bind("<up-arrow>", quitv2)
+root.bind("<up-arrow>", check1)
+root.bind("<up-arrow>", check1)
+root.bind("<up-arrow>", check1)
+root.bind("<space-bar>", check1)
+
 
 statusLabel = tk.CTkLabel(root, text="Code has not been found yet.")
 statusLabel.bind("<Button-1>", open_nitro)
