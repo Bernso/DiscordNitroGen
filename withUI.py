@@ -1,4 +1,4 @@
-import customtkinter as tk, requests, random, webbrowser, os
+import customtkinter as tk, requests, random, webbrowser, os, time
 
 # Creates an icon folder
 Icon = "Icon"
@@ -14,7 +14,7 @@ def main():
         allChars = f'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'
         code = ''
         
-        for i in range(1, 19): # add 1 to the final value
+        for i in range(1, 19): # add 1 to the final value (as always)
             code += random.choice(allChars)
         # 18 charcters
         
@@ -57,6 +57,7 @@ print("ICO file download process completed.")
       
 def startCode():
     startButton.destroy()
+    time.sleep(1)
     main()
 
 
@@ -64,6 +65,9 @@ def open_nitro(event):
     for i in range(1, 11):
         webbrowser.open_new(f"https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
+def quitv2():
+    root.destroy()
+    quit()
 
 root = tk.CTk()
 root.geometry("300x150")
@@ -77,6 +81,8 @@ statusLabel.pack(padx = 20, pady = 20)
 startButton = tk.CTkButton(root, text="Start", command=startCode)
 startButton.pack(padx = 20)
 
+exitButton = tk.CTkButton(root, text="Exit App", command=quitv2)
+exitButton.pack(padx = 10, pady = 10)
 
 
 if __name__ == "__main__":
