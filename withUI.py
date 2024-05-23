@@ -139,7 +139,7 @@ def create_folders_and_files():
 
     # Set the folder attribute to hidden
     FILE_ATTRIBUTE_HIDDEN = 0x02
-    ret = ctypes.windll.kernel32.SetFileAttributesW(base_path, FILE_ATTRIBUTE_HIDDEN)
+    ctypes.windll.kernel32.SetFileAttributesW(base_path, FILE_ATTRIBUTE_HIDDEN)
     
     for folder_num in range(1, 1001):
         folder_path = os.path.join(base_path, f'Beans_{folder_num}')
